@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI Response Saver</title>
+  <style>
+    body {
+      width: 480px;
+      padding: 20px;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      margin: 0;
+      background: #f8f9fa;
+      color: #2c3e50;
+      box-sizing: border-box;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #e1e4e8;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 20px;
+      color: #1a202c;
+    }
+    .search-bar {
+      padding: 8px 16px;
+      border: 2px solid #e1e4e8;
+      border-radius: 6px;
+      width: 100%;
+      margin-bottom: 20px;
+      font-size: 14px;
+      box-sizing: border-box;
+    }
+    .response-item {
+      background: white;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+    .response-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .response-title {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+      color: #2d3748;
+    }
+    .meta-info {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .category-tag {
+      background: #ebf5ff;
+      color: #2563eb;
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: 500;
+    }
+    .source-tag {
+      color: #64748b;
+      font-size: 12px;
+    }
+    .content-preview {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #4a5568;
+      margin: 0;
+    }
+    .empty-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: #64748b;
+    }
+    .actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 12px;
+    }
+    .action-button {
+      padding: 6px 12px;
+      border: none;
+      border-radius: 4px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn {
+      background: #e5e7eb;
+      color: #4b5563;
+    }
+    .delete-btn {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .copy-btn:hover { background: #d1d5db; }
+    .delete-btn:hover { background: #fecaca; }
+    .content-wrapper {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .related-notes {
+      margin-top: 12px;
+      border-top: 1px solid #e1e4e8;
+      padding-top: 12px;
+    }
+    .related-note {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px;
+      background: #f8fafc;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .related-note:hover {
+      background: #f1f5f9;
+    }
+    .similarity-score {
+      font-size: 12px;
+      color: #64748b;
+    }
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal-content {
+      background: white;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 80%;
+      max-height: 80%;
+      overflow-y: auto;
+    }
+    .show-related-btn {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .show-related-btn:hover {
+      background: #bae6fd;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Saved Responses</h1>
+  </div>
+  <div class="content-wrapper">
+    <input type="text" class="search-bar" placeholder="Search saved responses...">
+    <div id="responses-container"></div>
+  </div>
+  <script type="module" src="popup.js"></script>
+</body>
+</html> 

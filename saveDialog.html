@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Save AI Response</title>
+  <style>
+    body {
+      padding: 24px;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: #f8f9fa;
+      margin: 0;
+      color: #2c3e50;
+    }
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #444;
+    }
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid #e1e4e8;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: all 0.2s;
+      box-sizing: border-box;
+    }
+    input:focus {
+      border-color: #2563eb;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(37,99,235,0.1);
+    }
+    .preview {
+      max-height: 120px;
+      overflow-y: auto;
+      border: 2px solid #e1e4e8;
+      border-radius: 6px;
+      padding: 12px;
+      margin-bottom: 20px;
+      background: #f8f9fa;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .preview::-webkit-scrollbar {
+      width: 8px;
+    }
+    .preview::-webkit-scrollbar-track {
+      background: #f1f1f1;
+      border-radius: 4px;
+    }
+    .preview::-webkit-scrollbar-thumb {
+      background: #c1c1c1;
+      border-radius: 4px;
+    }
+    .button-group {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+    button {
+      flex: 1;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    #saveButton {
+      background: #2563eb;
+      color: white;
+    }
+    #saveButton:hover {
+      background: #1d4ed8;
+    }
+    #cancelButton {
+      background: #e5e7eb;
+      color: #4b5563;
+    }
+    #cancelButton:hover {
+      background: #d1d5db;
+    }
+    .source-tag {
+      display: inline-block;
+      padding: 4px 8px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #4b5563;
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="source-tag" id="sourceInfo"></div>
+    <div class="form-group">
+      <label>Preview</label>
+      <div class="preview" id="textPreview"></div>
+    </div>
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" id="title" placeholder="Give your saved content a title">
+    </div>
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input type="text" id="category" placeholder="Add a category for organization">
+    </div>
+    <div class="button-group">
+      <button id="cancelButton">Cancel</button>
+      <button id="saveButton">Save Response</button>
+    </div>
+  </div>
+  <script type="module" src="saveDialog.js"></script>
+</body>
+</html> 

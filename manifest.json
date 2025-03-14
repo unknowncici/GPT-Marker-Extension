@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "AI Response Saver",
+  "version": "1.0",
+  "description": "Save and categorize responses from GPT, Claude, and Deepseek",
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "activeTab",
+    "unlimitedStorage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "icons": {
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+} 
